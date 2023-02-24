@@ -19,7 +19,7 @@ struct DateScroller: View {
                     .imageScale(.large)
                     .font(Font.title.weight(.bold))
             }
-            Text(dateHolder.date.formatted())
+            Text(dateFormatted())
                 .font(.title)
                 .bold()
                 .animation(.none)
@@ -34,7 +34,7 @@ struct DateScroller: View {
     
     func dateFormatted() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd LLL yy"
+        dateFormatter.dateFormat = "dd LLL yyyy"
         return dateFormatter.string(from: dateHolder.date)
     }
     
